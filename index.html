@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verbum Contabilidade — Natal/RN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:       #0B1F4A;
+  --navy-mid:   #0f2645;
+  --navy-card:  #132860;
+  --navy-deep:  #081530;
+  --gold:       #C9A84C;
+  --gold-light: #e8c96a;
+  --gold-b:     rgba(201,168,76,.22);
+  --gold-bh:    rgba(201,168,76,.55);
+  --cream:      #e8e4dc;
+  --cream-70:   rgba(232,228,220,.70);
+  --cream-40:   rgba(232,228,220,.40);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;color:var(--cream);background:var(--navy-deep);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:1000;background:var(--navy);padding:0 8%;display:flex;align-items:center;justify-content:space-between;height:80px;box-shadow:0 2px 24px rgba(0,0,0,.45);border-bottom:1px solid var(--gold-b)}
+.logo{text-decoration:none;cursor:pointer;display:flex;align-items:center;background:#fff;padding:7px 16px;border-radius:4px;box-shadow:0 2px 14px rgba(0,0,0,.3);transition:box-shadow .3s}
+.logo:hover{box-shadow:0 4px 20px rgba(201,168,76,.35)}
+.logo img{height:54px;width:auto;display:block}
+.logo small{display:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--cream-70);text-decoration:none;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;transition:color .3s;cursor:pointer}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:5px}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;transition:all .3s}
+.mob-menu{display:none;position:fixed;top:80px;left:0;right:0;background:var(--navy);border-top:1px solid var(--gold-b);padding:1rem;z-index:999;flex-direction:column;gap:.3rem}
+.mob-menu.open{display:flex}
+.mob-menu a{color:var(--cream-70);text-decoration:none;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1rem;border-radius:3px;cursor:pointer;transition:all .3s}
+.mob-menu a:hover{color:var(--gold);background:rgba(201,168,76,.08)}
+
+/* PAGES */
+.page{display:none}
+.page.active{display:block}
+main{padding-top:80px}
+
+/* SHARED */
+.section{padding:5.5rem 8%}
+.sec-alt{background:var(--navy-mid)}
+.sec-dark{background:var(--navy)}
+.sec-label{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem;display:flex;align-items:center;gap:.75rem}
+.sec-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.75rem,3vw,2.7rem);color:var(--cream);line-height:1.2;margin-bottom:.9rem}
+.sec-sub{font-size:.97rem;color:var(--cream-70);max-width:540px;line-height:1.8;margin-bottom:2.8rem}
+.gold-bar{width:44px;height:2px;background:var(--gold);margin:1rem 0 2rem}
+.btn-primary{display:inline-flex;align-items:center;gap:.7rem;background:var(--gold);color:var(--navy);padding:.95rem 1.9rem;border-radius:3px;font-weight:700;font-size:.88rem;letter-spacing:.07em;text-decoration:none;text-transform:uppercase;transition:all .3s;border:2px solid var(--gold);cursor:pointer}
+.btn-primary:hover{background:transparent;color:var(--gold)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.7rem;background:transparent;color:#fff;padding:.95rem 1.9rem;border-radius:3px;font-weight:600;font-size:.88rem;letter-spacing:.07em;text-decoration:none;text-transform:uppercase;transition:all .3s;border:2px solid rgba(255,255,255,.3);cursor:pointer}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* HOME — HERO */
+.hero{background:linear-gradient(140deg,var(--navy-deep) 0%,var(--navy) 100%);min-height:88vh;display:flex;align-items:center;padding:5rem 8%;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;right:-15%;width:550px;height:550px;border:1px solid rgba(201,168,76,.1);border-radius:50%}
+.hero::after{content:'';position:absolute;top:-20%;right:-5%;width:360px;height:360px;border:1px solid rgba(201,168,76,.07);border-radius:50%}
+.hero-inner{max-width:680px;position:relative;z-index:2}
+.hero-eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;display:flex;align-items:center;gap:.75rem}
+.hero-eyebrow::before{content:'';display:block;width:36px;height:1px;background:var(--gold)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,5vw,3.7rem);color:#fff;line-height:1.18;margin-bottom:1.4rem;font-weight:600}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,.72);line-height:1.82;margin-bottom:2.4rem;max-width:500px}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+
+/* STATS */
+.stats{background:var(--navy);padding:2.8rem 8%;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;border-bottom:1px solid var(--gold-b)}
+.stat{text-align:center}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--cream);font-weight:600}
+.stat-n span{color:var(--gold)}
+.stat-l{font-size:.78rem;color:var(--cream-40);letter-spacing:.07em;text-transform:uppercase;margin-top:.3rem}
+
+/* HOME CARDS */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.card{background:var(--navy-card);border:1px solid var(--gold-b);border-top:3px solid var(--gold);padding:1.8rem;border-radius:3px;transition:all .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.45),0 0 0 1px var(--gold-bh)}
+.card-icon{width:46px;height:46px;background:rgba(201,168,76,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;font-size:1.3rem}
+.card h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--cream);margin-bottom:.7rem}
+.card p{font-size:.88rem;color:var(--cream-70);line-height:1.72}
+.card-cta{background:linear-gradient(135deg,var(--gold),#8b6a10);border-color:transparent;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1rem}
+.card-cta h3{color:var(--navy)}
+.card-cta .btn-primary{background:var(--navy);border-color:var(--navy);color:#fff}
+.card-cta .btn-primary:hover{background:transparent;border-color:#fff;color:#fff}
+
+/* DIFFERENTIALS */
+.diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.diff-item{display:flex;gap:1.2rem;align-items:flex-start}
+.diff-ico{width:50px;height:50px;min-width:50px;background:rgba(201,168,76,.14);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.35rem}
+.diff-item h4{font-family:'Playfair Display',serif;font-size:1rem;color:#fff;margin-bottom:.4rem}
+.diff-item p{font-size:.87rem;color:rgba(255,255,255,.62);line-height:1.65}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.testi{background:var(--navy-card);border:1px solid var(--gold-b);padding:2rem;border-radius:3px;position:relative}
+.testi::before{content:'"';font-family:'Playfair Display',serif;font-size:4rem;color:var(--gold);position:absolute;top:.4rem;left:1.4rem;line-height:1;opacity:.3}
+.stars{color:var(--gold);letter-spacing:2px;margin-bottom:.5rem;font-size:.95rem}
+.testi p{font-size:.9rem;color:var(--cream-70);line-height:1.72;padding-top:.9rem;margin-bottom:1.4rem}
+.testi-author{display:flex;align-items:center;gap:.75rem}
+.avatar{width:40px;height:40px;background:var(--navy);border:1px solid var(--gold-b);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Playfair Display',serif;font-weight:600}
+.author-name{font-weight:700;font-size:.88rem;color:var(--cream)}
+.author-role{font-size:.78rem;color:var(--cream-40)}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(140deg,var(--navy-deep),var(--navy));padding:5.5rem 8%;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:480px;height:480px;border:1px solid rgba(201,168,76,.1);border-radius:50%}
+.cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.6rem);color:#fff;margin-bottom:.9rem;position:relative;z-index:1}
+.cta-band p{color:rgba(255,255,255,.68);margin-bottom:1.8rem;font-size:1.02rem;position:relative;z-index:1}
+.cta-band .btn-primary{position:relative;z-index:1}
+
+/* SOBRE */
+.page-hero{padding:7.5rem 8% 4.5rem;background:linear-gradient(140deg,var(--navy-deep),var(--navy))}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,3rem);color:#fff;margin-bottom:.9rem;margin-top:.6rem}
+.page-hero p{color:rgba(255,255,255,.68);max-width:580px;line-height:1.82;font-size:1.02rem}
+
+.sobre-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center}
+.photo-ph{background:var(--navy);border:1px solid var(--gold-b);border-radius:3px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.photo-ph::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--gold)}
+.photo-ph-inner{text-align:center;color:var(--cream-40)}
+.photo-ph-inner svg{width:72px;height:72px;margin-bottom:.8rem}
+.photo-ph-inner p{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+.sobre-txt h2{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--cream);margin-bottom:1.4rem}
+.sobre-txt p{color:var(--cream-70);line-height:1.82;margin-bottom:.9rem;font-size:.93rem}
+.fe-box{background:rgba(201,168,76,.08);border-left:3px solid var(--gold);padding:1.4rem;margin:1.5rem 0;border-radius:0 3px 3px 0}
+.fe-box blockquote{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--cream);font-style:italic;line-height:1.65}
+.fe-box cite{font-size:.75rem;color:var(--gold);font-style:normal;letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.8rem}
+
+.mvv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-top:2.6rem}
+.mvv-card{background:var(--navy-card);border:1px solid var(--gold-b);padding:2.3rem;border-radius:3px;position:relative}
+.mvv-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);border-radius:0 0 3px 3px}
+.mvv-tag{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+.mvv-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--cream);margin-bottom:.9rem}
+.mvv-card p{font-size:.88rem;color:var(--cream-70);line-height:1.72}
+
+/* SERVIÇOS */
+.srv-item{background:var(--navy-card);border:1px solid var(--gold-b);border-radius:3px;padding:2.5rem;margin-bottom:1.3rem;display:grid;grid-template-columns:70px 1fr auto;gap:2rem;align-items:center;transition:all .3s}
+.srv-item:hover{border-color:var(--gold);transform:translateX(4px);box-shadow:0 4px 24px rgba(0,0,0,.3)}
+.srv-num{font-family:'Playfair Display',serif;font-size:2.8rem;color:rgba(201,168,76,.25);font-weight:700;line-height:1}
+.srv-info h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--cream);margin-bottom:.7rem}
+.srv-info p{font-size:.88rem;color:var(--cream-70);line-height:1.72;max-width:580px}
+.btn-srv{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--gold);padding:.65rem 1.3rem;border-radius:3px;font-size:.8rem;text-decoration:none;letter-spacing:.07em;text-transform:uppercase;font-weight:700;transition:all .3s;border:2px solid var(--gold-b);white-space:nowrap}
+.btn-srv:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+
+/* CONTATO */
+.contato-wrap{padding:5.5rem 8%;display:grid;grid-template-columns:3fr 2fr;gap:4rem}
+.form-g{margin-bottom:1.4rem}
+.form-g label{display:block;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.45rem}
+.form-g input,.form-g textarea{width:100%;padding:.85rem 1rem;border:1px solid var(--gold-b);border-radius:3px;font-family:'Lato',sans-serif;font-size:.93rem;color:var(--cream);background:var(--navy-card);transition:border-color .3s;outline:none}
+.form-g input::placeholder,.form-g textarea::placeholder{color:var(--cream-40)}
+.form-g input:focus,.form-g textarea:focus{border-color:var(--gold)}
+.form-g textarea{min-height:130px;resize:vertical}
+.btn-form{width:100%;background:var(--gold);color:var(--navy);padding:1rem;border:2px solid var(--gold);border-radius:3px;font-family:'Lato',sans-serif;font-size:.92rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.btn-form:hover{background:transparent;color:var(--gold)}
+.contact-info{display:flex;flex-direction:column;gap:1.4rem}
+.info-block{background:var(--navy-card);border:1px solid var(--gold-b);padding:1.4rem;border-radius:3px}
+.info-block h4{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+.info-block p{font-size:.88rem;color:var(--cream-70);line-height:1.65}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:.75rem;background:#25D366;color:#fff;padding:1rem;border-radius:3px;font-weight:700;font-size:.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;transition:background .3s}
+.btn-wa:hover{background:#128C7E}
+.btn-ig{display:flex;align-items:center;justify-content:center;gap:.75rem;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;padding:1rem;border-radius:3px;font-weight:700;font-size:.9rem;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;transition:opacity .3s}
+.btn-ig:hover{opacity:.88}
+
+/* FOOTER */
+footer{background:var(--navy-deep);padding:2.8rem 8%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--gold-b)}
+.foot-logo{background:#fff;padding:5px 14px;border-radius:4px}
+.foot-logo img{height:46px;width:auto;display:block}
+.foot-nav{display:flex;gap:1.5rem;list-style:none}
+.foot-nav a{font-size:.78rem;color:var(--cream-40);text-decoration:none;cursor:pointer;transition:color .3s}
+.foot-nav a:hover{color:var(--gold)}
+.foot-copy{font-size:.76rem;color:var(--cream-40)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .cards,.testi-grid,.mvv-grid,.diff-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .sobre-grid{grid-template-columns:1fr}
+  .srv-item{grid-template-columns:1fr;gap:1rem}
+  .srv-num{display:none}
+  .contato-wrap{grid-template-columns:1fr}
+  .section,.cta-band{padding:4rem 6%}
+  .hero{padding:4.5rem 6%;min-height:82vh}
+  .page-hero{padding:5.5rem 6% 3rem}
+  .stats{padding:2rem 6%}
+  footer{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+  .hero-btns{flex-direction:column}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.page.active .hero-inner,
+.page.active .page-hero h1,
+.page.active .page-hero p{animation:fadeUp .55s ease forwards}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo" onclick="go('home')"><img src="verbum-assets/logo-oficial.png" alt="Verbum Contabilidade"></div>
+  <ul class="nav-links">
+    <li><a id="n-home" class="active" onclick="go('home')">Início</a></li>
+    <li><a id="n-sobre" onclick="go('sobre')">Sobre</a></li>
+    <li><a id="n-servicos" onclick="go('servicos')">Serviços</a></li>
+    <li><a id="n-contato" onclick="go('contato')">Contato</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob-menu" id="mob">
+  <a onclick="go('home')">Início</a>
+  <a onclick="go('sobre')">Sobre</a>
+  <a onclick="go('servicos')">Serviços</a>
+  <a onclick="go('contato')">Contato</a>
+</div>
+
+<main>
+
+<!-- ═══════════ HOME ═══════════ -->
+<div id="p-home" class="page active">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Natal · Rio Grande do Norte</div>
+      <h1>Seu negócio merece um contador que <em>realmente te entende.</em></h1>
+      <p>Na Verbum, você não é só um CNPJ. Somos uma equipe com mais de 20 anos de atuação no mercado, em constante aperfeiçoamento — com ética e fé como base de tudo que fazemos.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="https://wa.me/5584996626666?text=Olá!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Verbum." target="_blank">💬 Falar no WhatsApp</a>
+        <button class="btn-ghost" onclick="go('servicos')">Ver Serviços</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-n">20<span>+</span></div><div class="stat-l">Anos de atuação</div></div>
+    <div class="stat"><div class="stat-n">7</div><div class="stat-l">Áreas de atuação</div></div>
+    <div class="stat"><div class="stat-n">100<span>%</span></div><div class="stat-l">Comprometimento</div></div>
+    <div class="stat"><div class="stat-n">RN</div><div class="stat-l">Natal · Todo o Brasil</div></div>
+  </div>
+
+  <section class="section sec-alt">
+    <div class="sec-label">O que fazemos</div>
+    <h2 class="sec-title">Soluções completas para o seu negócio</h2>
+    <p class="sec-sub">Da abertura ao crescimento, cuidamos de cada detalhe contábil para que você foque no que realmente importa: fazer seu negócio prosperar.</p>
+    <div class="cards">
+      <div class="card"><div class="card-icon">📊</div><h3>Assessoria Contábil</h3><p>Gestão contábil completa com relatórios claros e linguagem que você entende. Sem enrolação.</p></div>
+      <div class="card"><div class="card-icon">🧾</div><h3>Assessoria Fiscal e Tributária</h3><p>Redução legal de impostos e conformidade total. Você paga o que deve — nem mais, nem menos.</p></div>
+      <div class="card"><div class="card-icon">👥</div><h3>Assessoria Trabalhista</h3><p>Folha de pagamento, admissões, demissões e conformidade com a CLT. Sua equipe em ordem.</p></div>
+      <div class="card"><div class="card-icon">💼</div><h3>BPO Financeiro</h3><p>Gestão financeira terceirizada: contas a pagar, a receber e fluxo de caixa sob controle.</p></div>
+      <div class="card"><div class="card-icon">🏛️</div><h3>Estruturação Societária</h3><p>A estrutura jurídica certa desde o início. Proteja o patrimônio e prepare a empresa para crescer.</p></div>
+      <div class="card"><div class="card-icon">🎯</div><h3>Planejamento Tributário Estratégico</h3><p>Muito além da contabilidade tradicional. Simulações, cenários e estratégias para pagar menos imposto de forma legal.</p></div>
+      <div class="card"><div class="card-icon">🌎</div><h3>Consultoria Internacional</h3><p>Especializada para brasileiros que residem ou pretendem residir no exterior. Saída fiscal definitiva com segurança.</p></div>
+      <div class="card card-cta"><h3>Pronto para ter o parceiro certo?</h3><a class="btn-primary" href="https://wa.me/5584996626666" target="_blank">Avaliação Gratuita</a></div>
+    </div>
+  </section>
+
+  <section class="section sec-dark">
+    <div class="sec-label">Por que a Verbum</div>
+    <h2 class="sec-title">O que nos torna diferentes</h2>
+    <p class="sec-sub">Não somos apenas mais um escritório de contabilidade. Somos o parceiro que você queria ter desde o primeiro dia.</p>
+    <div class="diff-grid">
+      <div class="diff-item"><div class="diff-ico">⏳</div><div><h4>Mais de 20 Anos de Atuação</h4><p>Uma equipe com mais de duas décadas de mercado, em constante desenvolvimento. Experiência reconhecida e repertório sólido para enfrentar qualquer desafio do seu negócio.</p></div></div>
+      <div class="diff-item"><div class="diff-ico">🤝</div><div><h4>Atendimento Humanizado</h4><p>Você fala com quem resolve. Sem robôs, sem filas. Somos parceiros, não apenas prestadores de serviço.</p></div></div>
+      <div class="diff-item"><div class="diff-ico">⚖️</div><div><h4>Ética Acima de Tudo</h4><p>Nunca sugerimos atalhos que comprometam a sua empresa. Nossa reputação é construída sobre a verdade.</p></div></div>
+    </div>
+  </section>
+
+  <section class="section sec-alt">
+    <div class="sec-label">Depoimentos</div>
+    <h2 class="sec-title">O que nossos clientes dizem</h2>
+    <p class="sec-sub">A melhor prova vem de quem confiou em nós para cuidar do que tem de mais valioso: seu negócio.</p>
+    <div class="testi-grid">
+      <div class="testi"><div class="stars">★★★★★</div><p>"Finalmente encontrei um contador que me explica tudo de forma clara. A Verbum transformou a forma como gerencio as finanças da minha empresa."</p><div class="testi-author"><div class="avatar">M</div><div><div class="author-name">Marcos Oliveira</div><div class="author-role">Empresário · Natal/RN</div></div></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><p>"Antes eu tinha medo de falar com meu contador porque não entendia nada. Na Verbum, tudo mudou. É uma parceria de verdade, com confiança de verdade."</p><div class="testi-author"><div class="avatar">A</div><div><div class="author-name">Ana Beatriz</div><div class="author-role">Dentista · Natal/RN</div></div></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><p>"A Verbum reduziu minha carga tributária de forma 100% legal. Resultado: mais dinheiro no caixa, menos dor de cabeça. Recomendo sem hesitar."</p><div class="testi-author"><div class="avatar">R</div><div><div class="author-name">Rafael Santos</div><div class="author-role">Lojista · Natal/RN</div></div></div></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Pronto para ter tranquilidade fiscal de verdade?</h2>
+    <p>A primeira conversa é gratuita e sem compromisso.</p>
+    <a class="btn-primary" href="https://wa.me/5584996626666?text=Olá!%20Quero%20uma%20avaliação%20gratuita." target="_blank">💬 Solicitar Avaliação Gratuita</a>
+  </section>
+
+</div>
+
+
+<!-- ═══════════ SOBRE ═══════════ -->
+<div id="p-sobre" class="page">
+
+  <section class="page-hero">
+    <div class="sec-label">Sobre nós</div>
+    <h1>Mais do que números — somos parceiros de jornada</h1>
+    <p>Conheça a história, os valores e a equipe por trás da Verbum Contabilidade.</p>
+  </section>
+
+  <section class="section sec-alt">
+    <div class="sobre-grid">
+      <div class="photo-ph">
+        <div class="photo-ph-inner">
+          <div style="background:#fff;padding:14px 22px;border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,.35)">
+            <img src="verbum-assets/logo-oficial.png" alt="Verbum Contabilidade" style="width:180px;display:block">
+          </div>
+          <p style="margin-top:1.4rem;color:rgba(232,228,220,.45)">Nossa Equipe</p>
+        </div>
+      </div>
+      <div class="sobre-txt">
+        <div class="sec-label">Nossa história</div>
+        <h2>Uma equipe construída sobre propósito</h2>
+        <div class="gold-bar"></div>
+        <p>A Verbum Contabilidade nasceu de uma convicção simples: o empreendedor brasileiro merece uma equipe contábil que realmente se importa com o seu sucesso.</p>
+        <p>Com mais de 20 anos de atuação no mercado e uma equipe em constante desenvolvimento e aperfeiçoamento, a Verbum acumula experiências reconhecidas em contabilidade, gestão tributária e estruturação empresarial. Não trabalhamos com fórmulas genéricas — entendemos cada negócio como único.</p>
+        <p>Instalada em Natal, Rio Grande do Norte, a Verbum atende empreendedores que buscam mais do que um serviço contábil. Buscam um parceiro — uma equipe que esteja ao lado nos momentos difíceis e nas grandes conquistas.</p>
+        <div class="fe-box">
+          <blockquote>"Acreditamos que quando você coloca a fé e a ética no centro do trabalho, o resultado financeiro é uma consequência natural. Fazemos contabilidade porque amamos ver empresários prosperarem."</blockquote>
+          <cite>— Equipe Verbum Contabilidade</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-label">Nossos pilares</div>
+    <h2 class="sec-title">Missão, Visão e Valores</h2>
+    <div class="mvv-grid">
+      <div class="mvv-card"><div class="mvv-tag">Missão</div><h3>Ser o parceiro contábil que todo empreendedor merece</h3><p>Oferecemos assessoria de excelência com atendimento humanizado, para que nossos clientes cresçam com segurança e tranquilidade.</p></div>
+      <div class="mvv-card"><div class="mvv-tag">Visão</div><h3>Referência em contabilidade com propósito</h3><p>Ser reconhecidos como o escritório mais confiável do RN — onde resultado e valores caminham juntos, sempre.</p></div>
+      <div class="mvv-card"><div class="mvv-tag">Valores</div><h3>O que nos guia todos os dias</h3><p>Fé como fundamento. Ética sem concessões. Transparência em cada orientação. Comprometimento com o sucesso do cliente.</p></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Vamos conversar?</h2>
+    <p>Primeira avaliação gratuita e sem compromisso. Queremos conhecer o seu negócio.</p>
+    <a class="btn-primary" href="https://wa.me/5584996626666" target="_blank">💬 Agendar Conversa</a>
+  </section>
+
+</div>
+
+
+<!-- ═══════════ SERVIÇOS ═══════════ -->
+<div id="p-servicos" class="page">
+
+  <section class="page-hero">
+    <div class="sec-label">Soluções</div>
+    <h1>O que a Verbum pode fazer pelo seu negócio</h1>
+    <p>Soluções completas e personalizadas — do básico ao estratégico, incluindo planejamento tributário avançado e consultoria internacional para brasileiros no exterior.</p>
+  </section>
+
+  <section class="section">
+    <div class="srv-item">
+      <div class="srv-num">01</div>
+      <div class="srv-info"><h3>📊 Assessoria Contábil</h3><p>Gestão contábil completa com lançamentos precisos, balancetes mensais e demonstrações financeiras em dia. Você recebe relatórios claros e em linguagem simples para tomar decisões com segurança — sem surpresas, sem atrasos, sem burocracia.</p></div>
+      <a class="btn-srv" href="https://wa.me/5584996626666?text=Tenho%20interesse%20em%20Assessoria%20Contábil." target="_blank">Solicitar →</a>
+    </div>
+    <div class="srv-item">
+      <div class="srv-num">02</div>
+      <div class="srv-info"><h3>🧾 Assessoria Fiscal e Tributária</h3><p>Análise do melhor regime tributário, controle fiscal e apuração de impostos com precisão. Identificamos oportunidades legais de redução da carga tributária — você paga somente o que deve, sem riscos de autuação. Seu dinheiro no lugar certo.</p></div>
+      <a class="btn-srv" href="https://wa.me/5584996626666?text=Tenho%20interesse%20em%20Assessoria%20Fiscal." target="_blank">Solicitar →</a>
+    </div>
+    <div class="srv-item">
+      <div class="srv-num">03</div>
+      <div class="srv-info"><h3>👥 Assessoria Trabalhista e Previdenciária</h3><p>Gerenciamos folha de pagamento, admissões, demissões, férias, 13º e todas as obrigações trabalhistas com rigor. Você fica em conformidade com a CLT e a Previdência Social, protegendo sua empresa de passivos que podem custar caro.</p></div>
+      <a class="btn-srv" href="https://wa.me/5584996626666?text=Tenho%20interesse%20em%20Assessoria%20Trabalhista." target="_blank">Solicitar →</a>
+    </div>
+    <div class="srv-item">
+      <div class="srv-num">04</div>
+      <div class="srv-info"><h3>💼 BPO Financeiro</h3><p>Terceirizamos a gestão financeira completa: contas a pagar, a receber, conciliação bancária e fluxo de caixa. Você ganha controle real sobre o dinheiro do negócio e libera tempo para focar no que faz de melhor — empreender.</p></div>
+      <a class="btn-srv" href="https://wa.me/5584996626666?text=Tenho%20interesse%20em%20BPO%20Financeiro." target="_blank">Solicitar →</a>
+    </div>
+    <div class="srv-item">
+      <div class="srv-num">05</div>
+      <div class="srv-info"><h3>🏛️ Estruturação Societária</h3><p>Definimos a melhor estrutura jurídica e societária para o seu negócio — na abertura, reorganização ou proteção patrimonial. Uma estrutura bem planejada desde o início evita problemas futuros e prepara a empresa para crescer com solidez.</p></div>
+      <a class="btn-srv" href="https://wa.me/5584996626666?text=Tenho%20interesse%20em%20Estruturação%20Societária." target="_blank">Solicitar →</a>
+    </div>
+    <div class="srv-item">
+      <div class="srv-num">06</div>
+      <div class="srv-info"><h3>🎯 Planejamento Tributário e Estratégia Empresarial</h3><p>Muito além da contabilidade tradicional. Realizamos estudos de economia tributária, simulações de cenários fiscais e identificamos o regime mais vantajoso para o seu negócio. Planejamos a distribuição de lucros, analisamos riscos e desenhamos estratégias de crescimento sustentável — para que você pague menos imposto de forma completamente legal e construa valor com visão de longo prazo.</p></div>
+      <a class="btn-srv" href="https://wa.me/5584996626666?text=Tenho%20interesse%20em%20Planejamento%20Tributário%20Estratégico." target="_blank">Solicitar →</a>
+    </div>
+    <div class="srv-item">
+      <div class="srv-num">07</div>
+      <div class="srv-info"><h3>🌎 Consultoria Internacional e Saída Fiscal Definitiva</h3><p>Serviço especializado para brasileiros que residem ou planejam residir no exterior. Realizamos o diagnóstico da sua situação fiscal, planejamos a saída definitiva do Brasil, orientamos sobre residência fiscal e regularização patrimonial internacional. Atendemos expatriados, investidores no exterior e famílias que buscam planejamento sucessório além-fronteiras — com segurança jurídica e conformidade total.</p></div>
+      <a class="btn-srv" href="https://wa.me/5584996626666?text=Tenho%20interesse%20em%20Consultoria%20Internacional." target="_blank">Solicitar →</a>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Não sabe por onde começar?</h2>
+    <p>Analisamos o seu negócio e indicamos os serviços que fazem mais sentido para você agora.</p>
+    <a class="btn-primary" href="https://wa.me/5584996626666?text=Quero%20uma%20análise%20gratuita%20do%20meu%20negócio." target="_blank">💬 Quero uma Análise Gratuita</a>
+  </section>
+
+</div>
+
+
+<!-- ═══════════ CONTATO ═══════════ -->
+<div id="p-contato" class="page">
+
+  <section class="page-hero">
+    <div class="sec-label">Fale conosco</div>
+    <h1>Vamos conversar sobre o futuro do seu negócio</h1>
+    <p>Primeira conversa gratuita e sem compromisso. Estamos aqui para ouvir, entender e ajudar.</p>
+  </section>
+
+  <div class="contato-wrap">
+    <div>
+      <div class="sec-label">Envie uma mensagem</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.55rem;color:var(--cream);margin-bottom:1.8rem">Preencha o formulário</h2>
+      <form onsubmit="handleForm(event)">
+        <div class="form-g"><label>Nome completo</label><input type="text" placeholder="Seu nome" required></div>
+        <div class="form-g"><label>E-mail</label><input type="email" placeholder="seu@email.com" required></div>
+        <div class="form-g"><label>Telefone / WhatsApp</label><input type="tel" placeholder="(84) 9 0000-0000"></div>
+        <div class="form-g"><label>Mensagem</label><textarea placeholder="Conte um pouco sobre seu negócio e o que você precisa..."></textarea></div>
+        <button type="submit" class="btn-form">Enviar Mensagem</button>
+      </form>
+    </div>
+    <div class="contact-info">
+      <div>
+        <div class="sec-label">Outros canais</div>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--cream);font-size:1.25rem;margin-bottom:1.4rem">Prefere falar diretamente?</h3>
+      </div>
+      <a class="btn-wa" href="https://wa.me/5584996626666?text=Olá!%20Vim%20pelo%20site%20da%20Verbum." target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn-ig" href="https://instagram.com/verbumcontabilidade" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @verbumcontabilidade
+      </a>
+      <div class="info-block"><h4>Localização</h4><p>Natal, Rio Grande do Norte<br>Atendemos presencialmente e online<br>para todo o Brasil</p></div>
+      <div class="info-block"><h4>Horário de atendimento</h4><p>Segunda a Sexta · 08h às 18h<br>WhatsApp: Horário comercial</p></div>
+      <div class="info-block" style="border-left:3px solid var(--gold)"><h4>Avaliação inicial</h4><p style="color:var(--gold);font-weight:700">Gratuita e sem compromisso.</p><p style="margin-top:.3rem">Entre em contato — vamos entender juntos o que o seu negócio precisa.</p></div>
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+<footer>
+  <div class="foot-logo"><img src="verbum-assets/logo-oficial.png" alt="Verbum Contabilidade"></div>
+  <ul class="foot-nav">
+    <li><a onclick="go('home')">Início</a></li>
+    <li><a onclick="go('sobre')">Sobre</a></li>
+    <li><a onclick="go('servicos')">Serviços</a></li>
+    <li><a onclick="go('contato')">Contato</a></li>
+  </ul>
+  <p class="foot-copy">© 2026 Verbum Contabilidade. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+function go(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('p-' + page).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const el = document.getElementById('n-' + page);
+  if (el) el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('mob').classList.remove('open');
+}
+function toggleMob() {
+  document.getElementById('mob').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  const mob = document.getElementById('mob');
+  if (!mob.contains(e.target) && !document.querySelector('.hamburger').contains(e.target)) {
+    mob.classList.remove('open');
+  }
+});
+function handleForm(e) {
+  e.preventDefault();
+  alert('Mensagem enviada! Em breve entraremos em contato.');
+  e.target.reset();
+}
+</script>
+</body>
+</html>
