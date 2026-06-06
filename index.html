@@ -26,9 +26,9 @@ body{font-family:'Lato',sans-serif;color:var(--cream);background:var(--navy-deep
 
 /* NAV */
 nav{position:fixed;top:0;width:100%;z-index:1000;background:var(--navy);padding:0 8%;display:flex;align-items:center;justify-content:space-between;height:80px;box-shadow:0 2px 24px rgba(0,0,0,.45);border-bottom:1px solid var(--gold-b)}
-.logo{text-decoration:none;cursor:pointer;display:flex;align-items:center;background:#fff;padding:7px 16px;border-radius:4px;box-shadow:0 2px 14px rgba(0,0,0,.3);transition:box-shadow .3s}
-.logo:hover{box-shadow:0 4px 20px rgba(201,168,76,.35)}
-.logo img{height:54px;width:auto;display:block}
+.logo{text-decoration:none;cursor:pointer;display:flex;align-items:center;transition:opacity .3s,filter .3s}
+.logo:hover{opacity:.85;filter:drop-shadow(0 0 10px rgba(201,168,76,.5))}
+.logo img{height:62px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(201,168,76,.25))}
 .logo small{display:none}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{color:var(--cream-70);text-decoration:none;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;transition:color .3s;cursor:pointer}
@@ -169,8 +169,8 @@ main{padding-top:80px}
 
 /* FOOTER */
 footer{background:var(--navy-deep);padding:2.8rem 8%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--gold-b)}
-.foot-logo{background:#fff;padding:5px 14px;border-radius:4px}
-.foot-logo img{height:46px;width:auto;display:block}
+.foot-logo{display:flex;align-items:center}
+.foot-logo img{height:52px;width:auto;display:block;filter:drop-shadow(0 2px 6px rgba(201,168,76,.2))}
 .foot-nav{display:flex;gap:1.5rem;list-style:none}
 .foot-nav a{font-size:.78rem;color:var(--cream-40);text-decoration:none;cursor:pointer;transition:color .3s}
 .foot-nav a:hover{color:var(--gold)}
@@ -228,6 +228,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .srv-item::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:width .4s ease}
 .srv-item:hover::after{width:100%}
 
+/* HERO LOGO MARK */
+.hero-logo-mark{margin-bottom:2rem}
+.hero-logo-mark img{height:110px;width:auto;display:block;filter:drop-shadow(0 4px 24px rgba(201,168,76,.45));animation:fadeUp .7s ease forwards}
+
 /* STAT COUNTER */
 .stat-n{transition:color .3s}
 </style>
@@ -235,7 +239,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 <body>
 
 <nav>
-  <div class="logo" onclick="go('home')"><img src="verbum-assets/logo-oficial.png" alt="Verbum Contabilidade"></div>
+  <div class="logo" onclick="go('home')"><img src="verbum-assets/logo-sem-fundo.png" alt="Verbum Contabilidade"></div>
   <ul class="nav-links">
     <li><a id="n-home" class="active" onclick="go('home')">Início</a></li>
     <li><a id="n-sobre" onclick="go('sobre')">Sobre</a></li>
@@ -262,6 +266,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   <section class="hero">
     <div class="hero-ring3"></div>
     <div class="hero-inner">
+      <div class="hero-logo-mark">
+        <img src="verbum-assets/logo-sem-fundo.png" alt="Verbum Contabilidade">
+      </div>
       <div class="hero-eyebrow">Natal · Rio Grande do Norte</div>
       <h1>Seu negócio merece um contador que <em>realmente te entende.</em></h1>
       <p>Na Verbum, você não é só um CNPJ. Somos uma equipe com mais de 20 anos de atuação no mercado, em constante aperfeiçoamento — com ética e fé como base de tudo que fazemos.</p>
@@ -339,9 +346,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     <div class="sobre-grid">
       <div class="photo-ph">
         <div class="photo-ph-inner">
-          <div style="background:#fff;padding:14px 22px;border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,.35)">
-            <img src="verbum-assets/logo-oficial.png" alt="Verbum Contabilidade" style="width:180px;display:block">
-          </div>
+          <img src="verbum-assets/logo-sem-fundo.png" alt="Verbum Contabilidade" style="width:200px;display:block;filter:drop-shadow(0 4px 20px rgba(201,168,76,.35))">
           <p style="margin-top:1.4rem;color:rgba(232,228,220,.45)">Nossa Equipe</p>
         </div>
       </div>
@@ -480,7 +485,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 </main>
 
 <footer>
-  <div class="foot-logo"><img src="verbum-assets/logo-oficial.png" alt="Verbum Contabilidade"></div>
+  <div class="foot-logo"><img src="verbum-assets/logo-sem-fundo.png" alt="Verbum Contabilidade"></div>
   <ul class="foot-nav">
     <li><a onclick="go('home')">Início</a></li>
     <li><a onclick="go('sobre')">Sobre</a></li>
