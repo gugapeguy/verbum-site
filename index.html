@@ -26,10 +26,11 @@ body{font-family:'Lato',sans-serif;color:var(--cream);background:var(--navy-deep
 
 /* NAV */
 nav{position:fixed;top:0;width:100%;z-index:1000;background:var(--navy);padding:0 8%;display:flex;align-items:center;justify-content:space-between;height:80px;box-shadow:0 2px 24px rgba(0,0,0,.45);border-bottom:1px solid var(--gold-b)}
-.logo{text-decoration:none;cursor:pointer;display:flex;align-items:center;background:#fff;padding:9px 20px;border-radius:5px;box-shadow:0 2px 18px rgba(0,0,0,.35),0 0 0 1px rgba(201,168,76,.15);transition:all .3s}
-.logo:hover{box-shadow:0 6px 28px rgba(0,0,0,.4),0 0 0 1px rgba(201,168,76,.5);transform:translateY(-1px)}
-.logo img{height:62px;width:auto;display:block}
-.logo small{display:none}
+.logo{text-decoration:none;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:opacity .3s}
+.logo:hover{opacity:.82}
+.logo img{display:none}
+.logo-text{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--cream);letter-spacing:.04em;line-height:1.2}
+.logo-text span{display:block;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-family:'Lato',sans-serif;font-weight:400;margin-top:2px}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{color:var(--cream-70);text-decoration:none;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;transition:color .3s;cursor:pointer}
 .nav-links a:hover,.nav-links a.active{color:var(--gold)}
@@ -169,8 +170,7 @@ main{padding-top:80px}
 
 /* FOOTER */
 footer{background:var(--navy-deep);padding:2.8rem 8%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--gold-b)}
-.foot-logo{background:#fff;padding:5px 14px;border-radius:4px}
-.foot-logo img{height:46px;width:auto;display:block}
+.foot-logo{display:flex;align-items:center}
 .foot-nav{display:flex;gap:1.5rem;list-style:none}
 .foot-nav a{font-size:.78rem;color:var(--cream-40);text-decoration:none;cursor:pointer;transition:color .3s}
 .foot-nav a:hover{color:var(--gold)}
@@ -230,8 +230,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 
 /* HERO LOGO MARK */
 .hero-logo-mark{margin-bottom:2.2rem}
-.hero-logo-box{display:inline-flex;background:#fff;padding:14px 28px;border-radius:6px;box-shadow:0 8px 48px rgba(0,0,0,.5),0 0 0 1px rgba(201,168,76,.35),0 0 32px rgba(201,168,76,.12);animation:fadeUp .6s ease forwards}
-.hero-logo-box img{height:90px;width:auto;display:block}
+.hero-logo-box{display:inline-flex;background:#fff;padding:10px 18px;border-radius:6px;box-shadow:0 8px 48px rgba(0,0,0,.5),0 0 0 1px rgba(201,168,76,.35),0 0 32px rgba(201,168,76,.12);animation:fadeUp .6s ease forwards}
+.hero-logo-box img{height:130px;width:auto;display:block}
 
 /* STAT COUNTER */
 .stat-n{transition:color .3s}
@@ -240,7 +240,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 <body>
 
 <nav>
-  <div class="logo" onclick="go('home')"><img src="verbum-assets/logo-oficial.png" alt="Verbum Contabilidade"></div>
+  <div class="logo" onclick="go('home')">
+    <div class="logo-text">Verbum<span>Contabilidade</span></div>
+  </div>
   <ul class="nav-links">
     <li><a id="n-home" class="active" onclick="go('home')">Início</a></li>
     <li><a id="n-sobre" onclick="go('sobre')">Sobre</a></li>
@@ -349,8 +351,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     <div class="sobre-grid">
       <div class="photo-ph">
         <div class="photo-ph-inner">
-          <div style="background:#fff;padding:14px 22px;border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,.35)">
-            <img src="verbum-assets/logo-oficial.png" alt="Verbum Contabilidade" style="width:180px;display:block">
+          <div style="background:#fff;padding:10px 16px;border-radius:6px;box-shadow:0 4px 28px rgba(0,0,0,.4),0 0 0 1px rgba(201,168,76,.3)">
+            <img src="verbum-assets/logo-oficial.png" alt="Verbum Contabilidade" style="width:260px;display:block">
           </div>
           <p style="margin-top:1.4rem;color:rgba(232,228,220,.45)">Nossa Equipe</p>
         </div>
@@ -490,7 +492,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 </main>
 
 <footer>
-  <div class="foot-logo"><img src="verbum-assets/logo-oficial.png" alt="Verbum Contabilidade"></div>
+  <div class="foot-logo">
+    <div class="logo-text" style="color:var(--cream)">Verbum<span>Contabilidade</span></div>
+  </div>
   <ul class="foot-nav">
     <li><a onclick="go('home')">Início</a></li>
     <li><a onclick="go('sobre')">Sobre</a></li>
