@@ -64,9 +64,9 @@ main{padding-top:80px}
 .hero{background:linear-gradient(140deg,var(--navy-deep) 0%,var(--navy) 100%);min-height:88vh;display:flex;align-items:center;padding:5rem 8%;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-40%;right:-15%;width:550px;height:550px;border:1px solid rgba(201,168,76,.1);border-radius:50%}
 .hero::after{content:'';position:absolute;top:-20%;right:-5%;width:360px;height:360px;border:1px solid rgba(201,168,76,.07);border-radius:50%}
-.hero-layout{display:grid;grid-template-columns:1fr auto;gap:5rem;align-items:center;width:100%;position:relative;z-index:2}
-.hero-inner{max-width:620px}
-.hero-logo-side{display:flex;justify-content:center;align-items:center}
+.hero-layout{display:grid;grid-template-columns:1fr 340px;gap:6rem;align-items:center;width:100%;position:relative;z-index:2}
+.hero-inner{max-width:580px}
+.hero-logo-side{display:flex;justify-content:center;align-items:center;height:100%}
 .hero-eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;display:flex;align-items:center;gap:.75rem}
 .hero-eyebrow::before{content:'';display:block;width:36px;height:1px;background:var(--gold)}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,5vw,3.7rem);color:#fff;line-height:1.18;margin-bottom:1.4rem;font-weight:600}
@@ -234,8 +234,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 
 /* HERO LOGO MARK */
 .hero-logo-mark{margin-bottom:2.2rem}
-.hero-logo-box{display:inline-flex;background:#fff;padding:10px 18px;border-radius:6px;box-shadow:0 8px 48px rgba(0,0,0,.5),0 0 0 1px rgba(201,168,76,.35),0 0 32px rgba(201,168,76,.12);animation:fadeUp .6s ease forwards}
-.hero-logo-box img{height:130px;width:auto;display:block}
+.hero-logo-box{display:flex;justify-content:center;align-items:center;background:#fff;padding:28px 32px;border-radius:8px;box-shadow:0 8px 48px rgba(0,0,0,.5),0 0 0 1px rgba(201,168,76,.3),0 0 40px rgba(201,168,76,.1);animation:fadeUp .7s ease forwards;width:100%}
+.hero-logo-box img{width:100%;max-width:260px;height:auto;display:block}
 
 /* STAT COUNTER */
 .stat-n{transition:color .3s}
@@ -275,7 +275,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     <div class="hero-layout">
       <div class="hero-inner">
         <div class="hero-eyebrow">Natal · Rio Grande do Norte</div>
-        <h1>Seu negócio merece uma assessoria contábil que <em>realmente te entende.</em></h1>
+        <h1>Seu negócio merece uma<br>assessoria contábil que<br><em>realmente te entende.</em></h1>
         <p>Na Verbum, você não é só um CNPJ. Somos uma equipe com mais de 20 anos de atuação no mercado, em constante aperfeiçoamento — com ética e fé como base de tudo que fazemos.</p>
         <div class="hero-btns">
           <a class="btn-primary" href="https://wa.me/5584996626666?text=Olá!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Verbum." target="_blank">💬 Falar no WhatsApp</a>
